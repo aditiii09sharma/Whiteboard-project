@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Collaborative Whiteboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container">
+        <aside id="toolbar">
+            <h2>🎨 Whiteboard Tools</h2>
+            
+            <div class="tool-buttons">
+                <button id="pen-tool" class="tool-btn active">✏️ Pen</button>
+                <button id="eraser-tool" class="tool-btn">🧽 Eraser</button>
+                <button id="select-tool" class="tool-btn">🔍 Select</button>
+            </div>
+
+            <div class="shape-buttons">
+                <button id="rectangle-tool" class="tool-btn">⬜ Rectangle</button>
+                <button id="circle-tool" class="tool-btn">⭕ Circle</button>
+                <button id="line-tool" class="tool-btn">📏 Line</button>
+                <button id="triangle-tool" class="tool-btn">🔺 Triangle</button>
+                <button id="arrow-tool" class="tool-btn">➡️ Arrow</button>
+                <button id="star-tool" class="tool-btn">⭐ Star</button>
+            </div>
+
+            <div class="setting-group">
+                <label for="color-picker">Color:</label>
+                <input type="color" id="color-picker" value="#000000">
+            </div>
+
+            <div class="setting-group">
+                <label for="fill-color-picker">Fill Color:</label>
+                <input type="color" id="fill-color-picker" value="#000000">
+                <label>
+                    <input type="checkbox" id="fill-shape" checked> Fill Shape
+                </label>
+            </div>
+
+            <div class="setting-group">
+                <label for="size-slider"> Size: <span id="current-size">5px</span></label>
+                <input type="range" id="size-slider" min="1" max="50" value="5">
+            </div>
+            
+            <div class="setting-group">
+                <label for="opacity-slider">Opacity: <span id="current-opacity">100%</span></label>
+                <input type="range" id="opacity-slider" min="10" max="100" value="100">
+            </div>
+
+            <div class="action-group">
+                <button id="undo-btn">↶ Undo</button>
+                <button id="redo-btn">↷ Redo</button>
+                <button id="clear-btn">🗑️ Clear All</button>
+                <button id="save-btn">💾 Save</button>
+            </div>
+            
+            <div class="status-group">
+                <div id="cursor-position">X: 0, Y: 0</div>
+                <div id="drawing-mode">Mode: Free Drawing</div>
+            </div>
+        </aside>
+
+        <main id="whiteboard">
+            <canvas id="drawing-canvas"></canvas>
+            <canvas id="temp-canvas"></canvas>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
